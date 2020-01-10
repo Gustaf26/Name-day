@@ -7,51 +7,50 @@
 
 	<title>Name day</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 	<header class="container-fluid bg-dark text-light rubrik">
-        <h1>Your Swedish name day</h1>
+        <h1>Your name day</h1>
     </header>
     
     <main class="container">
 
         <div class="row linea">
-            <section class="col-sm-5 col-md-5 col-lg-5 input-group flex-nowrap wrapper">
-                <h3>Enter the name you are looking for...</h3>
+            <section class="col-sm-5 col-md-5 col-lg-5 input-group flex-nowrap wrapperOne">
+                <h3>Enter a name...</h3>
                 <div class="input-group my-2">
-                    <input type="text" class="form-control my-1 name" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
-
-                    <div class="btn-group">
-                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Country
+                    <input type="text" class="form-control my-2 mx-1 name" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">  
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle my-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Search country
                         </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider">
-                            </div>
-                            <a class="dropdown-item" href="#">Separated link</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Sweden</a>
+                            <a class="dropdown-item" href="#">USA</a>
+                            <a class="dropdown-item" href="#">Spain</a>
                         </div>
-                    </div>    
-                    <button type="button" class="btn btn-success btn-lg btn-block namebutton">Search</button>
-                    
+                    </div>
+                </div>
+                
+                <button type="button" class="btn btn-success btn-lg btn-block namebutton">Search</button>    
                 <div>
                     <h3>...and you will find the right date here below</h3>
+                    <ul class="dateWrapper"></ul>
                 </div>
             </section>
-            <section class="col-sm-5 col-md-5 col-lg-5 input-group flex-nowrap wrapper">
+            <section class="col-sm-5 col-md-5 col-lg-5 input-group flex-nowrap wrapperTwo">
                 <h3>Or enter a date...</h3>
-                <div class="input-group mb-3">
-                    <input type="date" class="form-control my-5 date" placeholder="Date" aria-label="Date" aria-describedby="basic-addon1">
+                <div class="input-group my-1">
+                    <input type="date" class="form-control my-3 date" placeholder="Date" aria-label="Date" aria-describedby="basic-addon1">
                     <button type="button" class="btn btn-warning btn-lg btn-block datebutton">Search</button>
                 </div>
                 <div>
                     <h3>...and you will find the right names here instead</h3>
+                    <ul class="nameWrapper"></ul>
                 </div>
             </section>
         </div>
@@ -63,4 +62,8 @@
 
 <script src="app.js"></script>
 <script src="apicall.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </html>

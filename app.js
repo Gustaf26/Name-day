@@ -9,6 +9,11 @@ nameEl = document.querySelector(".name");
 
 dateEl = document.querySelector(".date");
 
+dateWrapperEl = document.querySelector(".dateWrapper");
+
+nameWrapperEl = document.querySelector(".nameWrapper");
+
+
 //EVENT HANDLERS
 
 target = "";
@@ -44,25 +49,41 @@ dateButtonEl.addEventListener('click', e => {
 
 //OUTPUT INFO
 
-function getDates(response_dates) {
+function getDates(result) {
+        
+        
+        dateWrapperEl.innerHTML = `<li>The name day of ${result.name} is the ${result.day} of ${result.month}</li>
+        <li><a class="newsearch" href="#">Find other people with the same name day</a></li>`; 
+        
+        document.querySelector(".newsearch").addEventListener('click', e =>{
+            target = e.target;
+            getUrl(0, result.month, result.day)
+        })
+        
+};
 
-    response_dates.forEach(element => {
-        console.log(`the dates are the `+ element.day + 'th of ' + element.month);
-})};
+function getNames(response) {
 
-//function getNames()
+    if (target == document.querySelector(".newsearch")) {
+        
+        dateWrapperEl.append(`${response.data[0].namedays.se} has or have the same name day`);
 
+    } else {nameWrapperEl.innerHTML = `<li>On that date ${response.data[0].namedays.se} has a name day</li>`}}
+
+
+//DOING SOMETHING DEPENDING ON THE DATA
 
 const getDetails = (response)=> {
+
+    if (response.results) {
   
-    if (target == nameButtonEl) {
+        response.results.forEach(result => {
+        
+        if(result.name == nameEl.value && target == nameButtonEl)
+            {getDates(result)}})}        
 
-        getDates(response.results);
+    else {getNames(response);}
 
-        }
-
-    else {console.log(`the names are `+ response.data[0].namedays.se);}
-
-}
+    };
 
 

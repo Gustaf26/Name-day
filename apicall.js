@@ -7,10 +7,10 @@ function getUrl (name, month, day){ name
     }
 
 
-    const getInfo = (url)=>{fetch(url)
-    .then(response=>response.json())
-    .then(response=>getDetails(response))
-    .catch(err=>console.log(err))}
+const getInfo = (url)=>{fetch(url)
+.then(response=>response.json())
+.then(response=>getDetails(response))
+.catch(err=>console.log(err))}
     
 
 

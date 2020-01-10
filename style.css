@@ -16,12 +16,18 @@ h3 {padding-top:2rem;}
 justify-content: center;}
 
 .linea {display:flex;
-    justify-content: space-around;}
+    justify-content: space-evenly;
+    min-height: 600px;}
 
-.wrapper{display: flex;
+.wrapperOne{display: flex;
 flex-direction: column;
-justify-content: center;
+justify-content: left;
 align-items: center;}
+
+.wrapperTwo{display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;}
 
 footer {text-align: center;
 padding:1rem;}
