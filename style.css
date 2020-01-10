@@ -1,0 +1,27 @@
+
+
+*{box-sizing:border-box;
+padding:0;
+margin:0;
+}
+
+h1 {padding:2rem;}
+
+main {min-height:600px;}
+
+h3 {padding-top:2rem;}
+
+.rubrik {display:flex;
+justify-content: center;}
+
+.linea {display:flex;
+    justify-content: space-around;}
+
+.wrapper{display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;}
+
+footer {text-align: center;
+padding:1rem;}
+

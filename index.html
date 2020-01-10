@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<title>Name day</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<header class="container-fluid bg-dark text-light rubrik">
+        <h1>Your Swedish name day</h1>
+    </header>
+    
+    <main class="container">
+
+        <div class="row linea">
+            <section class="col-sm-5 col-md-5 col-lg-5 input-group flex-nowrap wrapper">
+                <h3>Enter the name you are looking for...</h3>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend my-5">
+                    <span class="input-group-text" id="basic-addon1">+</span>
+                    </div>
+                    <input type="text" class="form-control my-5 name" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
+                    <button type="button" class="btn btn-success btn-lg btn-block namebutton">Search</button>
+                </div>
+                <div>
+                    <h3>...and you will find the right date here below</h3>
+                </div>
+            </section>
+            <section class="col-sm-5 col-md-5 col-lg-5 input-group flex-nowrap wrapper">
+                <h3>Or enter a date...</h3>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend my-5">
+                    <span class="input-group-text" id="basic-addon1">+</span>
+                    </div>
+                    <input type="date" class="form-control my-5 date" placeholder="Date" aria-label="Date" aria-describedby="basic-addon1">
+                    <button type="button" class="btn btn-warning btn-lg btn-block datebutton">Search</button>
+                </div>
+                <div>
+                    <h3>...and you will find the right names here instead</h3>
+                </div>
+            </section>
+        </div>
+    </main>	
+</body>
+<footer class="bg-dark text-light">
+    <p>Site created using Abbalin and Swaggerhub API + Bootstrap</p>
+</footer>
+
+<script src="app.js"></script>
+<script src="apicall.js"></script>
+</html>
