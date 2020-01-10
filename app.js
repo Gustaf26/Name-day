@@ -14,7 +14,7 @@ nameButtonEl.addEventListener('click', e => {
 
     name = nameEl.value;
 
-    apiname.getInfo(`https://api.abalin.net/getdate?name=${name}&country=se`);
+    getUrl(name, 0, 0);
 
 
 });
@@ -28,7 +28,7 @@ dateButtonEl.addEventListener('click', e => {
      if (month[0]==0) {month = month[1]; return month;};
      day = date.slice(8,10);
 
-    apidate.getInfo(`https://api.abalin.net/namedays?country=se&month=${month}&day=${day}`);
+   getUrl(0, month, day);
 
 });
 

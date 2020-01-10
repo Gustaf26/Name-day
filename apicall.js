@@ -1,23 +1,10 @@
-
-/*
-const getName =() =>{
-fetch(`https://api.abalin.net/getdate?name=${name}&country=sv`)
-.then(response=>response.json())
-.then(response=>getNameDetails(response))
-.catch(err=>console.log(err))
-
-};
-
-
-
-const getName =() =>{
-    fetch(`https://api.abalin.net/namedays?country=sv&month=${month}&day=${day}`)
-    .then(response=>response.json())
-    .then(response=>getDateNames(response))
-    .catch(err=>console.log(err))
-    };*/
-
 let url = "";
+
+function getUrl (name, month, day){ name
+    ? url=`https://api.abalin.net/getdate?name=${name}&country=se`
+    : url = `https://api.abalin.net/namedays?country=se&month=${month}&day=${day}`;
+    api.getInfo(url);
+    }
 
 
 class Apiurl {
@@ -29,10 +16,10 @@ class Apiurl {
     .then(response=>response.json())
     .then(response=>console.log(response))
     .catch(err=>console.log(err))}
-}
+    }
 
-const apiname = new Apiurl(url);
+const api = new Apiurl(url);
 
-const apidate = new Apiurl(url);
+
 
 
