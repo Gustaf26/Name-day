@@ -75,15 +75,31 @@ function getNames(response) {
 
 const getDetails = (response)=> {
 
-    if (response.results) {
+  /*  if (response.results) {
   
         response.results.forEach(result => {
         
         if(result.name == nameEl.value && target == nameButtonEl)
-            {getDates(result)}})}        
+            {getDates(result)}})}
+            
+    else if (response.results && response.results < 1){
+        alert("The name you are searching is not registered")
+    }
 
     else {getNames(response);}
 
-    };
+    };*/
+
+    if (response.results) { 
+        
+        if (response.results < 1) {
+        alert("Your name you search has no match")}
+
+        else {response.results.forEach(result => {
+        
+            if(result.name == nameEl.value && target == nameButtonEl)
+                {getDates(result)}})}}
+
+    else {getNames(response);}}
 
 
