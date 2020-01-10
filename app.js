@@ -1,4 +1,5 @@
 
+//TARGET ELEMENTS
 
 nameButtonEl = document.querySelector(".namebutton");
 
@@ -7,6 +8,8 @@ dateButtonEl = document.querySelector(".datebutton");
 nameEl = document.querySelector(".name");
 
 dateEl = document.querySelector(".date");
+
+//EVENT HANDLERS
 
 target = "";
 
@@ -29,8 +32,9 @@ dateButtonEl.addEventListener('click', e => {
 
     date =dateEl.value;
      month = date.slice(5,7);
-     if (month[0]==0) {month = month[1]; return month;};
+    month = Math.round(month);
      day = date.slice(8,10);
+     day = Math.round(day);
 
      target = e.target;
 
@@ -38,15 +42,24 @@ dateButtonEl.addEventListener('click', e => {
 
 });
 
+//OUTPUT INFO
+
+function getDates(response_dates) {
+
+    response_dates.forEach(element => {
+        console.log(`the dates are the `+ element.day + 'th of ' + element.month);
+})};
+
+//function getNames()
+
+
 const getDetails = (response)=> {
   
     if (target == nameButtonEl) {
 
-        response.results.forEach(element => {
-            console.log(`the dates are `+ element.day + '  ' + element.month);
-        });
+        getDates(response.results);
 
-    } 
+        }
 
     else {console.log(`the names are `+ response.data[0].namedays.se);}
 

@@ -22,13 +22,24 @@
         <div class="row linea">
             <section class="col-sm-5 col-md-5 col-lg-5 input-group flex-nowrap wrapper">
                 <h3>Enter the name you are looking for...</h3>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend my-5">
-                    <span class="input-group-text" id="basic-addon1">+</span>
-                    </div>
-                    <input type="text" class="form-control my-5 name" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
+                <div class="input-group my-2">
+                    <input type="text" class="form-control my-1 name" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
+
+                    <div class="btn-group">
+                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Country
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown-divider">
+                            </div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                    </div>    
                     <button type="button" class="btn btn-success btn-lg btn-block namebutton">Search</button>
-                </div>
+                    
                 <div>
                     <h3>...and you will find the right date here below</h3>
                 </div>
@@ -36,9 +47,6 @@
             <section class="col-sm-5 col-md-5 col-lg-5 input-group flex-nowrap wrapper">
                 <h3>Or enter a date...</h3>
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend my-5">
-                    <span class="input-group-text" id="basic-addon1">+</span>
-                    </div>
                     <input type="date" class="form-control my-5 date" placeholder="Date" aria-label="Date" aria-describedby="basic-addon1">
                     <button type="button" class="btn btn-warning btn-lg btn-block datebutton">Search</button>
                 </div>
