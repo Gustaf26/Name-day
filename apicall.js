@@ -14,7 +14,7 @@ class Apiurl {
 
     getInfo(url){fetch(url)
     .then(response=>response.json())
-    .then(response=>console.log(response))
+    .then(response=>getDetails(response))
     .catch(err=>console.log(err))}
     }
 
