@@ -52,7 +52,7 @@ dateButtonEl.addEventListener('click', e => {
 function getDates(result) {
         
         
-        dateWrapperEl.innerHTML = `<li>The name day of ${result.name} is the ${result.day} of ${result.month}</li>
+        dateWrapperEl.innerHTML = `<li>The name day of ${result.name} is the ${result.day} of ${getMonth(result.month)}</li>
         <li><a class="newsearch" href="#">Find other people with the same name day</a></li>`; 
         
         document.querySelector(".newsearch").addEventListener('click', e =>{
@@ -62,11 +62,28 @@ function getDates(result) {
         
 };
 
+function getMonth(monthNumber) {
+    a = monthNumber;
+    if (a=1) {return "January"}
+    else if  (a=2) {return "February"}
+    else if  (a=3) {return "March"}
+    else if  (a=4) {return "April"}
+    else if  (a=5) {return "May"}
+    else if  (a=6) {return "June"}
+    else if  (a=7) {return "July"}
+    else if (a=8) {return "August"}
+    else if  (a=9) {return "September"}
+    else if  (a=10) {return "October"}
+    else if  (a=11) {return "November"}
+    else {return "December"};
+    
+}
+
 function getNames(response) {
 
     if (target == document.querySelector(".newsearch")) {
         
-        dateWrapperEl.append(`${response.data[0].namedays.se} has or have the same name day`);
+       dateWrapperEl.innerHTML +=`<li>${response.data[0].namedays.se} has or have the same name day</li>`;
 
     } else {nameWrapperEl.innerHTML = `<li>On that date ${response.data[0].namedays.se} has a name day</li>`}}
 
@@ -75,29 +92,14 @@ function getNames(response) {
 
 const getDetails = (response)=> {
 
-  /*  if (response.results) {
-  
-        response.results.forEach(result => {
-        
-        if(result.name == nameEl.value && target == nameButtonEl)
-            {getDates(result)}})}
-            
-    else if (response.results && response.results < 1){
-        alert("The name you are searching is not registered")
-    }
-
-    else {getNames(response);}
-
-    };*/
-
     if (response.results) { 
         
         if (response.results < 1) {
-        alert("Your name you search has no match")}
+        alert("The name you search has no match")}
 
         else {response.results.forEach(result => {
         
-            if(result.name == nameEl.value && target == nameButtonEl)
+            if(result.name == nameEl.value)
                 {getDates(result)}})}}
 
     else {getNames(response);}}
