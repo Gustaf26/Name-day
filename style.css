@@ -12,7 +12,7 @@ h1 {padding:2rem;}
 main {min-height:600px;
     background-color: lightgray;}
 
-h3 {padding-top:2rem;}
+h3, h5 {padding-top:2rem;}
 
 .rubrik {display:flex;
     justify-content: center;}
@@ -36,6 +36,7 @@ h3 {padding-top:2rem;}
     align-items: center;}
 
 .dateWrapper, .nameWrapper {padding-top:1rem;
+    border: 1px dotted darkslategrey;
     margin-top:1.5rem;
     border-radius: 5px;
     list-style-type: none;
@@ -44,7 +45,8 @@ h3 {padding-top:2rem;}
     align-items: center;
     background-color: antiquewhite;}
 
-.dateWrapper li, .nameWrapper li {padding-bottom:1rem;}
+.dateWrapper li, .nameWrapper li {padding-bottom:1rem;
+    padding-left:1rem;}
 
 footer {text-align: center;
     padding:1rem;}

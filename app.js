@@ -52,7 +52,7 @@ dateButtonEl.addEventListener('click', e => {
 function getDates(result) {
         
         
-        dateWrapperEl.innerHTML = `<li>The name day of ${result.name} is the ${result.day} of ${getMonth(result.month)}</li>
+        dateWrapperEl.innerHTML = `<li>The name day of <em>${result.name}</em> is the ${result.day} of ${getMonth(result.month)}</li>
         <li><a class="newsearch" href="#">Find other people with the same name day</a></li>`; 
         
         document.querySelector(".newsearch").addEventListener('click', e =>{
@@ -82,10 +82,16 @@ function getMonth(monthNumber) {
 function getNames(response) {
 
     if (target == document.querySelector(".newsearch")) {
-        
-       dateWrapperEl.innerHTML +=`<li>${response.data[0].namedays.se} has or have the same name day</li>`;
 
-    } else {nameWrapperEl.innerHTML = `<li>On that date ${response.data[0].namedays.se} has a name day</li>`}}
+       if (response.data[0].namedays.se == nameEl.value) {
+
+        dateWrapperEl.innerHTML +=`<li>Only <em>${response.data[0].namedays.se}</em> has name day that day in that country</li>`;
+
+       }
+
+       else { dateWrapperEl.innerHTML +=`<li>${response.data[0].namedays.se} has the same name day</li>`;}  
+
+    } else {nameWrapperEl.innerHTML = `<li>On that date <em>${response.data[0].namedays.se}</em> has a name day</li>`}}
 
 
 //DOING SOMETHING DEPENDING ON THE DATA
