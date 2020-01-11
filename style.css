@@ -46,7 +46,8 @@ h3, h5 {padding-top:2rem;}
     background-color: antiquewhite;}
 
 .dateWrapper li, .nameWrapper li {padding-bottom:1rem;
-    padding-left:1rem;}
+    padding-left:1rem;
+    padding-right: 1rem;}
 
 footer {text-align: center;
     padding:1rem;}

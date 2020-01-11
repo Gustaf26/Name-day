@@ -13,10 +13,14 @@ dateWrapperEl = document.querySelector(".dateWrapper");
 
 nameWrapperEl = document.querySelector(".nameWrapper");
 
+dropdownEl = document.querySelector(".dropdown");
+
 
 //EVENT HANDLERS
 
 target = "";
+
+country = "";
 
 nameButtonEl.addEventListener('click', e => {
 
@@ -26,7 +30,7 @@ nameButtonEl.addEventListener('click', e => {
 
     target = e.target;
 
-    getUrl(name, 0, 0);
+    getUrl(name, country, 0, 0);
 
 
 });
@@ -43,7 +47,30 @@ dateButtonEl.addEventListener('click', e => {
 
      target = e.target;
 
-   getUrl(0, month, day);
+   getUrl(0, 0, month, day);
+
+});
+
+dropdownEl.addEventListener('click', e => {
+
+    e.preventDefault();
+
+     targetTwo = e.target;
+
+    if (targetTwo == document.getElementById("Czechia")) {country="cz"}
+    else if (targetTwo == document.getElementById("Germany")) {country="de"}
+    else if (targetTwo == document.getElementById("Austria")) {country="at"}
+    else if (targetTwo == document.getElementById("Denmark")) {country="dk"}
+    else if (targetTwo == document.getElementById("Spain")) {country="es"}
+    else if (targetTwo == document.getElementById("Finland")) {country="fi"}
+    else if (targetTwo == document.getElementById("France")) {country="fr"}
+    else if (targetTwo == document.getElementById("Croatia")) {country="hr"}
+    else if (targetTwo == document.getElementById("Hungary")) {country="hu"}
+    else if (targetTwo == document.getElementById("Italy")) {country="it"}
+    else if (targetTwo == document.getElementById("Poland")) {country="pl"}
+    else if (targetTwo == document.getElementById("Sweden")) {country="se"}
+    else if (targetTwo == document.getElementById("Slovakia")) {country="sk"}
+    else if (targetTwo == document.getElementById("USA")) {country="sk"}
 
 });
 
@@ -57,7 +84,7 @@ function getDates(result) {
         
         document.querySelector(".newsearch").addEventListener('click', e =>{
             target = e.target;
-            getUrl(0, result.month, result.day)
+            getUrl(0, country, result.month, result.day)
         })
         
 };
@@ -89,7 +116,7 @@ function getNames(response) {
 
        }
 
-       else { dateWrapperEl.innerHTML +=`<li>${response.data[0].namedays.se} has the same name day</li>`;}  
+       else { dateWrapperEl.innerHTML +=`<li><em>${response.data[0].namedays.se}</em> has the same name day</li>`;}  
 
     } else {nameWrapperEl.innerHTML = `<li>On that date <em>${response.data[0].namedays.se}</em> has a name day</li>`}}
 
@@ -105,8 +132,14 @@ const getDetails = (response)=> {
 
         else {response.results.forEach(result => {
         
+            if (result.name.includes(",")) {
+                
+                ind= result.name.indexOf(",");
+                result.name = result.name.slice(0, ind)}
+
             if(result.name == nameEl.value)
-                {getDates(result)}})}}
+                {getDates(result)}
+            else {alert("You need to write exactly the complete name")}})}}
 
     else {getNames(response);}}
 
