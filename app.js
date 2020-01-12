@@ -70,7 +70,7 @@ dropdownEl.addEventListener('click', e => {
     else if (targetTwo == document.getElementById("Poland")) {country="pl"}
     else if (targetTwo == document.getElementById("Sweden")) {country="se"}
     else if (targetTwo == document.getElementById("Slovakia")) {country="sk"}
-    else if (targetTwo == document.getElementById("USA")) {country="sk"}
+    else if (targetTwo == document.getElementById("USA")) {country="us"}
 
 });
 
@@ -84,47 +84,83 @@ function getDates(result) {
         
         document.querySelector(".newsearch").addEventListener('click', e =>{
             target = e.target;
+            
             getUrl(0, country, result.month, result.day)
         })
+
         
 };
 
+
+
+
 function getMonth(monthNumber) {
     a = monthNumber;
-    if (a=1) {return "January"}
-    else if  (a=2) {return "February"}
-    else if  (a=3) {return "March"}
-    else if  (a=4) {return "April"}
-    else if  (a=5) {return "May"}
-    else if  (a=6) {return "June"}
-    else if  (a=7) {return "July"}
-    else if (a=8) {return "August"}
-    else if  (a=9) {return "September"}
-    else if  (a=10) {return "October"}
-    else if  (a=11) {return "November"}
+    if (a==1) {return "January"}
+    else if  (a==2) {return "February"}
+    else if  (a==3) {return "March"}
+    else if  (a==4) {return "April"}
+    else if  (a==5) {return "May"}
+    else if  (a==6) {return "June"}
+    else if  (a==7) {return "July"}
+    else if (a==8) {return "August"}
+    else if  (a==9) {return "September"}
+    else if  (a==10) {return "October"}
+    else if  (a==11) {return "November"}
     else {return "December"};
     
 }
 
 function getNames(response) {
 
-    if (target == document.querySelector(".newsearch")) {
+    getCountry(response) };
 
-       if (response.data[0].namedays.se == nameEl.value) {
 
-        dateWrapperEl.innerHTML +=`<li>Only <em>${response.data[0].namedays.se}</em> has name day that day in that country</li>`;
+const getCountry = (response)=> {
 
-       }
+        let b ="";
+        if (response.data[0].namedays.at) {country="at"; b=response.data[0].namedays.at; setOutputNames(b)}
 
-       else { dateWrapperEl.innerHTML +=`<li><em>${response.data[0].namedays.se}</em> has the same name day</li>`;}  
+        else if (response.data[0].namedays.cz) {country="cz"; b=response.data[0].namedays.cz; setOutputNames(b)}
 
-    } else {nameWrapperEl.innerHTML = `<li>On that date <em>${response.data[0].namedays.se}</em> has a name day</li>`}}
+        else if (response.data[0].namedays.de) {country="de"; b=response.data[0].namedays.de; setOutputNames(b)}
+        else if (response.data[0].namedays.dk) {country="dk"; b=response.data[0].namedays.dk; setOutputNames(b)}
+        else if (response.data[0].namedays.es) {country="es"; b=response.data[0].namedays.es; setOutputNames(b)}
+        else if (response.data[0].namedays.fi) {country="fi"; b=response.data[0].namedays.fi; setOutputNames(b)}
+        else if (response.data[0].namedays.fr) {country="fr"; b=response.data[0].namedays.fr; setOutputNames(b)}
+        else if (response.data[0].namedays.hr) {country="hr"; b=response.data[0].namedays.hr; setOutputNames(b)}
+        else if (response.data[0].namedays.hu) {country="hu"; b=response.data[0].namedays.hu; setOutputNames(b)}
+        else if (response.data[0].namedays.it) {country="it"; b=response.data[0].namedays.it; setOutputNames(b)}
+        else if (response.data[0].namedays.pl) {country="pl"; b=response.data[0].namedays.pl; setOutputNames(b)}
+        else if (response.data[0].namedays.se) {country="se"; b=response.data[0].namedays.se; setOutputNames(b)}
+        else if (response.data[0].namedays.sk) {country="sk"; b=response.data[0].namedays.sk; setOutputNames(b)}
+        else {b=response.data[0].namedays.us; setOutputNames(b)}};
+
+
+
+const setOutputNames = (sameCountryNames)=> {
+
+        if (target == document.querySelector(".newsearch")) {
+
+            if (sameCountryNames== nameEl.value) {
+     
+             dateWrapperEl.innerHTML +=`<li>Only <em>${sameCountryNames}</em> has name day that day in that country</li>`;
+     
+            }
+     
+            else { dateWrapperEl.innerHTML +=`<li><em>${sameCountryNames}</em> has the same name day</li>`;}  
+     
+         } else {nameWrapperEl.innerHTML = `<li>On that date <em>${sameCountryNames}</em> has a name day</li>`
+    }};
+
 
 
 //DOING SOMETHING DEPENDING ON THE DATA
 
 const getDetails = (response)=> {
 
+    
+        
     if (response.results) { 
         
         if (response.results < 1) {
