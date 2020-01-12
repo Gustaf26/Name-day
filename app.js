@@ -173,22 +173,14 @@ const getDetails = (response)=> {
         alert("The name you search has no match")}
 
         else {response.results.forEach(result => {
-        
-          /* if (result.name.includes(",")) {
-                
-                ind= result.name.indexOf(",");
-                result.name = result.name.slice(0, ind)}*/
 
                 if (result.name.includes(nameEl.value)) {
                 
                     ind= result.name.indexOf(nameEl.value);
                     indTwo = ind + nameEl.value.length;
-                    indThree = ind + indTwo;
-                    result.name = result.name.slice(ind, indThree);
+                    result.name = result.name.slice(ind, indTwo);
                     getDates(result)}
 
-           /* if(result.name == nameEl.value)
-                {getDates(result)}*/
 
             else {alert("You need to write exactly the complete name")}})}}
 
