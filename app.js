@@ -20,6 +20,8 @@ dropdownEl = document.querySelector(".dropdown");
 
 target = "";
 
+targetTwo="";
+
 country = "";
 
 nameButtonEl.addEventListener('click', e => {
@@ -49,9 +51,9 @@ dateButtonEl.addEventListener('click', e => {
      
      setCountry();
 
-   getUrl(0, country, month, day);
-
-});
+     if (country=="") {alert("You need to set a country")}
+     
+     else {getUrl(0, country, month, day)};});
 
 dropdownEl.addEventListener('click', e => {
 
@@ -59,10 +61,9 @@ dropdownEl.addEventListener('click', e => {
 
      targetTwo = e.target;
 
+     setCountry();});
 
-     setCountry();
-
-});
+// AUXILIARY FUNCTIONS TO RENDER THE RIGHT DATA
 
 const setCountry= () =>{
 
@@ -79,15 +80,13 @@ const setCountry= () =>{
     else if (targetTwo == document.getElementById("Poland")) {country="pl"}
     else if (targetTwo == document.getElementById("Sweden")) {country="se"}
     else if (targetTwo == document.getElementById("Slovakia")) {country="sk"}
-    else if (targetTwo == document.getElementById("USA")) {country="us"}
+    else if (targetTwo == document.getElementById("USA")) {country="us"}}
 
-    if (target ==dateButtonEl) {target=targetTwo}
-}
 
-//OUTPUT INFO
+
+//MAIN FUNCTION TO GET THE DATES
 
 function getDates(result) {
-        
         
         dateWrapperEl.innerHTML = `<li>The name day of <em>${result.name}</em> is the ${result.day} of ${getMonth(result.month)}</li>
         <li><a class="newsearch" href="#">Find other people with the same name day</a></li>`; 
@@ -95,11 +94,10 @@ function getDates(result) {
         document.querySelector(".newsearch").addEventListener('click', e =>{
             target = e.target;
             
-            getUrl(0, country, result.month, result.day)
-        })        
-};
+            getUrl(0, country, result.month, result.day)})};
 
 
+//AUXILIARY FUNCTION
 
 
 function getMonth(monthNumber) {
@@ -115,9 +113,9 @@ function getMonth(monthNumber) {
     else if  (a==9) {return "September"}
     else if  (a==10) {return "October"}
     else if  (a==11) {return "November"}
-    else {return "December"};
-    
-}
+    else {return "December"};}
+
+//MAIN FUNCTION FOR GETTING THE NAMES
 
 function getNames(response) {
 
@@ -152,18 +150,16 @@ const setOutputNames = (sameCountryNames)=> {
 
             if (sameCountryNames== nameEl.value) {
      
-             dateWrapperEl.innerHTML +=`<li>Only <em>${sameCountryNames}</em> has name day that day in that country</li>`;
+             dateWrapperEl.innerHTML +=`<li>Only <em>${sameCountryNames}</em> has name day that day in that country</li>`;}
      
-            }
+            else { dateWrapperEl.innerHTML +=`<li><em>${sameCountryNames}</em> has / have the same name day</li>`;}  
      
-            else { dateWrapperEl.innerHTML +=`<li><em>${sameCountryNames}</em> has the same name day</li>`;}  
-     
-         } else {nameWrapperEl.innerHTML = `<li>On that date <em>${sameCountryNames}</em> has a name day</li>`
+         } else {nameWrapperEl.innerHTML = `<li>On that date <em>${sameCountryNames}</em> has / have a name day</li>`
     }};
 
 
 
-//DOING SOMETHING DEPENDING ON THE DATA
+//SENDING THE URL DATA TO RIGHT FUNCTION (FOR NAMES OR FOR DATES)
 
 const getDetails = (response)=> {
 
@@ -174,8 +170,7 @@ const getDetails = (response)=> {
 
         else {response.results.forEach(result => {
 
-                if (result.name.includes(nameEl.value)) {
-                
+                if (result.name.includes(nameEl.value)) {            
                     ind= result.name.indexOf(nameEl.value);
                     indTwo = ind + nameEl.value.length;
                     result.name = result.name.slice(ind, indTwo);
