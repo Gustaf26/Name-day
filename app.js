@@ -46,8 +46,10 @@ dateButtonEl.addEventListener('click', e => {
      day = Math.round(day);
 
      target = e.target;
+     
+     setCountry();
 
-   getUrl(0, 0, month, day);
+   getUrl(0, country, month, day);
 
 });
 
@@ -56,6 +58,13 @@ dropdownEl.addEventListener('click', e => {
     e.preventDefault();
 
      targetTwo = e.target;
+
+
+     setCountry();
+
+});
+
+const setCountry= () =>{
 
     if (targetTwo == document.getElementById("Czechia")) {country="cz"}
     else if (targetTwo == document.getElementById("Germany")) {country="de"}
@@ -72,7 +81,8 @@ dropdownEl.addEventListener('click', e => {
     else if (targetTwo == document.getElementById("Slovakia")) {country="sk"}
     else if (targetTwo == document.getElementById("USA")) {country="us"}
 
-});
+    if (target ==dateButtonEl) {target=targetTwo}
+}
 
 //OUTPUT INFO
 
@@ -86,9 +96,7 @@ function getDates(result) {
             target = e.target;
             
             getUrl(0, country, result.month, result.day)
-        })
-
-        
+        })        
 };
 
 
