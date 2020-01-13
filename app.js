@@ -15,6 +15,8 @@ nameWrapperEl = document.querySelector(".nameWrapper");
 
 dropdownEl = document.querySelector(".dropdown");
 
+menuButtonEl = document.querySelector("#dropdownMenuButton");
+
 
 //EVENT HANDLERS
 
@@ -32,10 +34,8 @@ nameButtonEl.addEventListener('click', e => {
 
     target = e.target;
 
-    getUrl(name, country, 0, 0);
-
-
-});
+    getUrl(name, country, 0, 0);});
+    
 
 dateButtonEl.addEventListener('click', e => {
 
@@ -52,7 +52,7 @@ dateButtonEl.addEventListener('click', e => {
      setCountry();
 
      if (country=="") {alert("You need to set a country")}
-     
+
      else {getUrl(0, country, month, day)};});
 
 dropdownEl.addEventListener('click', e => {
@@ -60,6 +60,8 @@ dropdownEl.addEventListener('click', e => {
     e.preventDefault();
 
      targetTwo = e.target;
+
+     menuButtonEl.innerText = targetTwo.innerText;
 
      setCountry();});
 
@@ -125,7 +127,7 @@ function getNames(response) {
 const getCountry = (response)=> {
 
         let b ="";
-        if (response.data[0].namedays.at) {country="at"; b=response.data[0].namedays.at; setOutputNames(b)}
+        if (response.data[0].namedays.at) {country="at"; b=response.data[0].namedays.at; setOutputNames(b);}
 
         else if (response.data[0].namedays.cz) {country="cz"; b=response.data[0].namedays.cz; setOutputNames(b)}
 
