@@ -13,7 +13,7 @@ main {min-height:600px;
     background-color: lightgray;
     background-image: linear-gradient(to bottom right, rgb(88, 83, 5), rgb(120, 139, 128));}
 
-h3, h5 {padding-top:2rem;}
+h2 {padding-top:2rem;}
 
 .rubrik {display:flex;
     justify-content: center;}
@@ -35,6 +35,10 @@ h3, h5 {padding-top:2rem;}
 .forma {display:flex;
     flex-direction: column;
     align-items: center;}
+
+.postmessage {padding-top:1rem;
+    font-size: 1.5em;
+    color:rgb(116, 68, 15);}
 
 .dateWrapper, .nameWrapper {padding-top:1rem;
     border: 1px dotted darkslategrey;
