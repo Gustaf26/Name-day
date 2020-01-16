@@ -18,9 +18,24 @@ h2 {padding-top:2rem;}
 .rubrik {display:flex;
     justify-content: center;}
 
+.countrysearch {display:flex;
+    justify-content: center;
+    padding-left: 1rem;
+    padding-right: 1rem;}
+
 .linea {display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;;}
+
+.lineados {display:flex;
     justify-content: space-evenly;
     min-height: 600px;}
+
+#countrysearch {display:flex;
+    flex-direction: column;
+    justify-content: center;}
 
 .wrapperOne{display: flex;
     flex-direction: column;
@@ -33,6 +48,10 @@ h2 {padding-top:2rem;}
     align-items: center;}
 
 .forma {display:flex;
+    flex-direction: column;
+    align-items: center;}
+
+.formatwo {display:flex;
     flex-direction: column;
     align-items: center;}
 

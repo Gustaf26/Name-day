@@ -18,33 +18,37 @@
     </header>
     
     <main class="container">
-
-        <div class="row linea">
+        <div class="row countrysearch">
+            <section class="linea">
+                <h2>Enter the country of the person / name</h2>
+                <div class="dropdown">
+                    <button class="btn btn-warning btn-lg dropdown-toggle my-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Search country
+                    </button>
+                    <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item Sweden" href="#">Sweden</a>
+                        <a class="dropdown-item" id="Austria" href="#" >Austria</a>
+                        <a class="dropdown-item" id="Czechia" href="#">Czechia </a>
+                        <a class="dropdown-item" id="Germany" href="#">Germany  </a>
+                        <a class="dropdown-item" id="Denmark" href="#">Denmark </a>
+                        <a class="dropdown-item" id="Spain" href="#">Spain </a>
+                        <a class="dropdown-item" id="Finland" href="#">Finland  </a>
+                        <a class="dropdown-item" id="France" href="#" >France  </a>
+                        <a class="dropdown-item" id="Croatia" href="#">Croatia </a>
+                        <a class="dropdown-item" id="Hungary" href="#" >Hungary </a>
+                        <a class="dropdown-item" id="Italy" href="#" >Italy </a>
+                        <a class="dropdown-item" id="Poland" href="#">Poland  </a>
+                        <a class="dropdown-item" id="Slovakia" href="#">Slovakia </a>
+                        <a class="dropdown-item" id="USA" href="#" id="USA">USA</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="row lineados">
             <section class="col-sm-5 col-md-5 col-lg-5 input-group flex-nowrap wrapperOne">
-                <h2>Enter a <span class="special">name</span> and a <span class="special">country...</span></h2>
+                <h3>And enter now <span class="special">the name...</h3>
                 <div class="input-group my-2 forma">
                     <input type="text" class="form-control name w-100 my-2" id="validationCustom01" placeholder="Name">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle my-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Search country
-                        </button>
-                        <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#" id="Sweden">Sweden</a>
-                            <a class="dropdown-item" href="#" id="Austria">Austria</a>
-                            <a class="dropdown-item" href="#" id="Czechia">Czechia </a>
-                            <a class="dropdown-item" href="#" id="Germany">Germany  </a>
-                            <a class="dropdown-item" href="#" id="Denmark">Denmark </a>
-                            <a class="dropdown-item" href="#" id="Spain">Spain </a>
-                            <a class="dropdown-item" href="#" id="Finland">Finland  </a>
-                            <a class="dropdown-item" href="#" id="France">France  </a>
-                            <a class="dropdown-item" href="#" id="Croatia">Croatia </a>
-                            <a class="dropdown-item" href="#" id="Hungary">Hungary </a>
-                            <a class="dropdown-item" href="#" id="Italy">Italy </a>
-                            <a class="dropdown-item" href="#" id="Poland">Poland  </a>
-                            <a class="dropdown-item" href="#" id="Slovakia">Slovakia </a>
-                            <a class="dropdown-item" href="#" id="USA">USA</a>
-                        </div>
-                    </div>
                 </div>
                 
                 <button type="button" class="btn btn-success btn-lg btn-block namebutton">Search</button>    
@@ -53,14 +57,15 @@
                     <ul class="dateWrapper"></ul>    
                 </div>
             </section>
+           
             <section class="col-sm-5 col-md-5 col-lg-5 input-group flex-nowrap wrapperTwo">
-                <h2>Or enter a </span class="special">date</span>...</h2>
-                <div class="input-group my-1">
-                    <input type="date" class="form-control my-3 date" placeholder="Date" aria-label="Date" aria-describedby="basic-addon1">
-                    <button type="button" class="btn btn-warning btn-lg btn-block datebutton">Search</button>
+                <h3>Or enter a </span class="special">date</span>...</h3>
+                <div class="input-group my-1 formatwo">
+                    <input type="date" class="form-control my-3 w-100 date" placeholder="Date" aria-label="Date" aria-describedby="basic-addon1">
+                    <button type="button" class="btn btn-success btn-lg btn-block datebutton">Search</button>
                 </div>
-                <div class="postmessage">
-                    <p>...and you will find the name days for that date & country here instead</p>
+                <div>
+                    <p class="postmessage">...and you will find the name days for that date here instead</pclass="postmessage">
                     <ul class="nameWrapper"></ul>
                 </div>
             </section>

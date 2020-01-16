@@ -15,7 +15,11 @@ nameWrapperEl = document.querySelector(".nameWrapper");
 
 dropdownEl = document.querySelector(".dropdown");
 
+dropdownTwoEl = document.querySelector(".dropdowntwo");
+
 menuButtonEl = document.querySelector("#dropdownMenuButton");
+
+menuButtonTwoEl = document.querySelector("#dropdownMenuButtontwo");
 
 
 //EVENT HANDLERS
@@ -34,6 +38,12 @@ nameButtonEl.addEventListener('click', e => {
 
     target = e.target;
 
+    setCountry();
+
+    if (country =="") {alert("You need to set a country")}
+
+    
+
     getUrl(name, country, 0, 0);});
     
 
@@ -51,7 +61,7 @@ dateButtonEl.addEventListener('click', e => {
      
      setCountry();
 
-     if (country=="") {alert("You need to set a country")}
+     if (country =="") {alert("You need to set a country")}
 
      else {getUrl(0, country, month, day)};});
 
@@ -65,30 +75,34 @@ dropdownEl.addEventListener('click', e => {
 
      setCountry();});
 
+
 // AUXILIARY FUNCTIONS TO RENDER THE RIGHT DATA
 
 const setCountry= () =>{
 
     if (targetTwo == document.getElementById("Czechia")) {country="cz"}
-    else if (targetTwo == document.getElementById("Germany")) {country="de"}
+    else if (targetTwo == document.getElementById("Germany"))  {country="de"}
     else if (targetTwo == document.getElementById("Austria")) {country="at"}
     else if (targetTwo == document.getElementById("Denmark")) {country="dk"}
     else if (targetTwo == document.getElementById("Spain")) {country="es"}
-    else if (targetTwo == document.getElementById("Finland")) {country="fi"}
-    else if (targetTwo == document.getElementById("France")) {country="fr"}
+    else if (targetTwo == document.getElementById("Finland"))  {country="fi"}
+    else if (targetTwo == document.getElementById("France"))  {country="fr"}
     else if (targetTwo == document.getElementById("Croatia")) {country="hr"}
     else if (targetTwo == document.getElementById("Hungary")) {country="hu"}
     else if (targetTwo == document.getElementById("Italy")) {country="it"}
-    else if (targetTwo == document.getElementById("Poland")) {country="pl"}
-    else if (targetTwo == document.getElementById("Sweden")) {country="se"}
+    else if (targetTwo == document.getElementById("Poland"))  {country="pl"}
+    else if (targetTwo == document.getElementById("Sweden"))  {country="se"}
     else if (targetTwo == document.getElementById("Slovakia")) {country="sk"}
     else if (targetTwo == document.getElementById("USA")) {country="us"}}
 
+    
 
 
 //MAIN FUNCTION TO GET THE DATES
 
 function getDates(result) {
+
+
         
         dateWrapperEl.innerHTML = `<li>The name day of <em>${result.name}</em> is the ${result.day} of ${getMonth(result.month)}</li>
         <li><a class="newsearch" href="#">Find other people with the same name day</a></li>`; 
@@ -157,7 +171,8 @@ const setOutputNames = (sameCountryNames)=> {
             else { dateWrapperEl.innerHTML +=`<li><em>${sameCountryNames}</em> has / have the same name day</li>`;}  
      
          } else {nameWrapperEl.innerHTML = `<li>On that date <em>${sameCountryNames}</em> has / have a name day</li>`
-    }};
+    }
+    nameEl.value="";};
 
 
 
